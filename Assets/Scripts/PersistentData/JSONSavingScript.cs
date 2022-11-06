@@ -26,24 +26,15 @@ public class JSONSavingScript : MonoBehaviour
 
     }// END OF START
 
-    // Update is called once per frame
-
-    /**
-     * creater a player data in this method.
-     * this is making a new instant of player data and currently has 4 arguments player {name, health, ammo, attack power} more can be adding 
-     * this is only a test data change it to the actuall player data later on. 
+    /*
+     * A method that set path want the data to be saved to 
+     * 
+     * There are 2 path to choose
+     * path saved the data in unity asset folder
+     * presistent path save the data in user data file in C/:drive
+     * 
+     * we want to save to a user data app file in launched game.
      */
-    //private void CreatePlayerData()
-    //{
-        
-    //    //myplayer = new Playerstat();
-
-    //    // PlayerDataTest = new PlayerDataTest("sys", 100, 140, 139);
-    
-    //}// END OF CREATEPLAYERDATA
-
-
-
     private void SetPaths()
     {
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "SavaData.json";
@@ -51,13 +42,21 @@ public class JSONSavingScript : MonoBehaviour
 
     }// END OF SETPATHS
 
+    /*
+     * A method that save data to a Json file
+     * It set chosen path to save to
+     * It take the data wanted to be save to a Json file
+     * It steam the data wanted to be sive to Json file
+     * Write the data to Json file
+     * close the writer.
+     */
     public void SavaData()
     {
         string savaPath = persistentPath; // set saving path to path
 
         Debug.Log("Saving Data at "+ savaPath);
 
-        string json = JsonUtility.ToJson(myplayer); // wrting the data to json file
+        string json = JsonUtility.ToJson(myplayer); // writing the data to json file
         Debug.Log("Data that are being save are: " + json);
 
         using StreamWriter writer = new StreamWriter(savaPath); // steaming the save data to a file
@@ -67,6 +66,12 @@ public class JSONSavingScript : MonoBehaviour
         Debug.Log( "Saving has been successful\n");
     }// END OF SAVADATA
 
+    /*
+     * A method that load data saved to a Json file
+     * It load A stream of data from the set path for data
+     * It read the whole Json file to the end
+     * It set data to that data from Json file
+     */
     public void LoadData()
     {
 
@@ -81,6 +86,12 @@ public class JSONSavingScript : MonoBehaviour
         
     }// END OF LOADDATA
 
+    /*
+     * For testing that actually saved to a Json file
+     * 
+     * Comment out in launch but not necessary 
+     *
+     */
     public void showData()
     {
         

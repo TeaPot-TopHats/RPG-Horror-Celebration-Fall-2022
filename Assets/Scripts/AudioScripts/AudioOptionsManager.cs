@@ -32,6 +32,7 @@ public class AudioOptionsManager : MonoBehaviour
         musicSliderText.text = PlayerPrefs.GetString("MusicText");
         musicVolume = PlayerPrefs.GetFloat("MusicVolume");
        // Music_VolumeSlider.value = musicVolume;
+        
 
         soundEffectsSliderText.text = PlayerPrefs.GetString("SoundEffectsText");
         soundEffectsVolume = PlayerPrefs.GetFloat("SoundEffectVolume");
@@ -51,7 +52,7 @@ public class AudioOptionsManager : MonoBehaviour
     }
     public void Start()
     {
-        LoadValues();
+       // LoadValues();
     }
 
 

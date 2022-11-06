@@ -7,10 +7,9 @@ public class Playerstat
 {
     public string Name;
     public float health;
-    public float maxAmmo;
     public float maxHealth;
-    public float ammo;
     public int killCount;
+    public int money;
 
     /*public override string ToString()
     {
